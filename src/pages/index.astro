@@ -89,8 +89,8 @@ if (!reducedMotion) {
   const nav = document.querySelector<HTMLElement>('nav[aria-label="Social links"]');
   if (nav) {
     const links = Array.from(nav.querySelectorAll<HTMLElement>('a'));
-    const RADIUS = 90;   // px — pull starts at this distance
-    const STRENGTH = 0.38; // fraction of offset to apply
+    const RADIUS = 70;   // px — pull starts at this distance
+    const STRENGTH = 0.22; // fraction of offset to apply
 
     links.forEach(link => {
       link.style.display = 'inline-block';
