@@ -3,17 +3,27 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Clement Hoang">
-  <h1 class="text-4xl font-normal tracking-tight text-ink mb-12 font-display">Clement Hoang</h1>
+  <h1
+    data-reveal
+    class="font-display font-normal text-ink mb-8"
+    style="font-size: clamp(3rem, 12vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em;"
+  >
+    Clement Hoang
+  </h1>
 
-  <div class="space-y-6 text-base leading-relaxed text-ink mb-16">
+  <div
+    data-reveal
+    class="space-y-6 text-lg leading-relaxed text-ink mb-10"
+    style="--reveal-delay: 80ms"
+  >
     <p>
       I'm a software engineer and builder, based in San Francisco. I currently work at
-      <a href="https://airtable.com" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">Airtable</a>,
+      <a href="https://airtable.com" class="link-bleed" rel="noopener noreferrer">Airtable</a>,
       leading agentic product development &mdash; an MCP server now
-      <a href="https://chatgpt.com/apps/airtable/asdk_app_693ca6ce2db08191bb52d66743c65184" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">live in ChatGPT Apps</a>
+      <a href="https://chatgpt.com/apps/airtable/asdk_app_693ca6ce2db08191bb52d66743c65184" class="link-bleed" rel="noopener noreferrer">live in ChatGPT Apps</a>
       and as an
-      <a href="https://claude.com/connectors/airtable" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">official Claude connector</a>,
-      <a href="https://blog.airtable.com/superagent/" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">Superagent</a>
+      <a href="https://claude.com/connectors/airtable" class="link-bleed" rel="noopener noreferrer">official Claude connector</a>,
+      <a href="https://blog.airtable.com/superagent/" class="link-bleed" rel="noopener noreferrer">Superagent</a>
       (an AI research agent), and an integrations platform connecting agents to hundreds of external services.
       I've also led enterprise readiness efforts across sandboxing, admin controls, and governance.
     </p>
@@ -21,8 +31,8 @@ import Base from '../layouts/Base.astro';
       Before that, I was tech lead at Credit Karma, where I shipped consumer financial products to millions of users &mdash;
       identity monitoring, credit locking, and the
       Relief Center, a
-      <a href="https://www.fastcompany.com/90624513/world-changing-ideas-awards-2021-pandemic-response-finalists-and-honorable-mentions" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">Fast Company World Changing Ideas finalist</a>. At Meta, I contributed to React core and shipped
-      <a href="https://legacy.reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">Fragments in v16.2</a>
+      <a href="https://www.fastcompany.com/90624513/world-changing-ideas-awards-2021-pandemic-response-finalists-and-honorable-mentions" class="link-bleed" rel="noopener noreferrer">Fast Company World Changing Ideas finalist</a>. At Meta, I contributed to React core and shipped
+      <a href="https://legacy.reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" class="link-bleed" rel="noopener noreferrer">Fragments in v16.2</a>
       &mdash; now one of the most widely used patterns in the ecosystem.
     </p>
     <p>
@@ -31,11 +41,16 @@ import Base from '../layouts/Base.astro';
       or chasing shuttlecocks on the badminton court.
     </p>
     <p>
-      Drop me a line at <a href="mailto:me@clemmy.ninja" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150">me@clemmy.ninja</a>.
+      Drop me a line at <a href="mailto:me@clemmy.ninja" class="link-bleed">me@clemmy.ninja</a>.
     </p>
   </div>
 
-  <nav aria-label="Social links" class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted border-t border-surface pt-8">
+  <nav
+    data-reveal
+    aria-label="Social links"
+    class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted border-t border-surface pt-8"
+    style="--reveal-delay: 240ms; position: relative;"
+  >
     <a href="https://github.com/clemmy" class="hover:text-accent transition-colors duration-150" rel="noopener noreferrer">GitHub</a>
     <span aria-hidden="true">&middot;</span>
     <a href="https://ca.linkedin.com/in/clementhoang" class="hover:text-accent transition-colors duration-150" rel="noopener noreferrer">LinkedIn</a>
@@ -48,4 +63,64 @@ import Base from '../layouts/Base.astro';
     <span aria-hidden="true">&middot;</span>
     <a href="/coaching" class="hover:text-accent transition-colors duration-150">Coaching</a>
   </nav>
+
+<script>
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ── Letter spring reveal on name ─────────────────────────────────────────────
+const h1 = document.querySelector<HTMLElement>('h1[data-reveal]');
+if (h1) {
+  const text = h1.textContent ?? '';
+  h1.setAttribute('aria-label', text);
+  h1.removeAttribute('data-reveal');
+
+  const STAGGER = 38; // ms between letters
+  h1.innerHTML = text.split('').map((char, i) => {
+    if (char === ' ') {
+      return '<span class="letter-space" aria-hidden="true"></span>';
+    }
+    const delay = reducedMotion ? 0 : i * STAGGER;
+    return `<span class="letter-spring" aria-hidden="true" style="animation-delay:${delay}ms">${char}</span>`;
+  }).join('');
+}
+
+// ── Magnetic social links ────────────────────────────────────────────────────
+if (!reducedMotion) {
+  const nav = document.querySelector<HTMLElement>('nav[aria-label="Social links"]');
+  if (nav) {
+    const links = Array.from(nav.querySelectorAll<HTMLElement>('a'));
+    const RADIUS = 70;   // px — pull starts at this distance
+    const STRENGTH = 0.22; // fraction of offset to apply
+
+    links.forEach(link => {
+      link.style.display = 'inline-block';
+    });
+
+    let rafId = 0;
+    window.addEventListener('mousemove', (e) => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        links.forEach(link => {
+          const rect = link.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+
+          if (dist < RADIUS) {
+            const pull = (1 - dist / RADIUS) * STRENGTH;
+            const dx = (e.clientX - cx) * pull;
+            const dy = (e.clientY - cy) * pull;
+            link.style.transform = `translate(${dx}px, ${dy}px)`;
+            link.style.transition = 'transform 0.08s linear, color 0.15s';
+          } else {
+            link.style.transform = 'translate(0,0)';
+            link.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1), color 0.15s';
+          }
+        });
+      });
+    });
+  }
+}
+</script>
+
 </Base>

@@ -5,15 +5,26 @@ import { Testimonials } from '../components/Testimonials';
 
 <Base title="Coaching — Clement Hoang">
   <a
+    data-reveal
     href="/"
     class="text-sm text-muted hover:text-accent transition-colors duration-150 inline-block mb-12"
   >
     Home
   </a>
 
-  <h1 class="text-3xl font-normal tracking-tight text-ink mb-8 font-display">Coaching</h1>
+  <h1
+    data-reveal
+    class="font-display font-normal text-ink mb-8"
+    style="--reveal-delay: 60ms; font-size: clamp(2.5rem, 10vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;"
+  >
+    Coaching
+  </h1>
 
-  <div class="space-y-4 text-base leading-relaxed text-ink mb-10">
+  <div
+    data-reveal
+    class="space-y-4 text-lg leading-relaxed text-ink mb-10"
+    style="--reveal-delay: 140ms"
+  >
     <p>
       I've worked across the full arc of a software career &mdash; early-stage startups, hypergrowth
       companies, and large-scale engineering organizations. My strength is dealing with ambiguity:
@@ -25,27 +36,31 @@ import { Testimonials } from '../components/Testimonials';
     <p>
       I've learned enormously from others throughout my career and would love to give back.
       Happy to chat about any of the topics below &mdash; reach me at
-      <a href="mailto:me@clemmy.ninja" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150">me@clemmy.ninja</a>.
+      <a href="mailto:me@clemmy.ninja" class="link-bleed">me@clemmy.ninja</a>.
     </p>
   </div>
 
-  <div class="space-y-8 mb-14">
+  <div
+    data-reveal
+    class="space-y-8 mb-14"
+    style="--reveal-delay: 220ms"
+  >
     <div>
-      <h2 class="text-sm font-semibold text-ink mb-1.5">Breaking into tech</h2>
+      <h2 class="font-display font-normal text-ink text-2xl mb-2">Breaking into tech</h2>
       <p class="text-sm text-muted leading-relaxed">
         Having worked at over 8 companies and applied to hundreds more, I can help with resume improvement,
         cracking the coding interview, and salary negotiation.
       </p>
     </div>
     <div>
-      <h2 class="text-sm font-semibold text-ink mb-1.5">Project consultation</h2>
+      <h2 class="font-display font-normal text-ink text-2xl mb-2">Project consultation</h2>
       <p class="text-sm text-muted leading-relaxed">
         From requirements to architecture, scoping, and execution &mdash; I can help you maximize business
         impact and avoid common pitfalls.
       </p>
     </div>
     <div>
-      <h2 class="text-sm font-semibold text-ink mb-1.5">Web development</h2>
+      <h2 class="font-display font-normal text-ink text-2xl mb-2">Web development</h2>
       <p class="text-sm text-muted leading-relaxed">
         Deep experience in React (including core contributions), performance optimization, server-side rendering,
         and building complex interactive applications. I also ran engineering bootcamps and mentored engineers
@@ -53,7 +68,7 @@ import { Testimonials } from '../components/Testimonials';
       </p>
     </div>
     <div>
-      <h2 class="text-sm font-semibold text-ink mb-1.5">Career growth</h2>
+      <h2 class="font-display font-normal text-ink text-2xl mb-2">Career growth</h2>
       <p class="text-sm text-muted leading-relaxed">
         Leveling up in your engineering journey &mdash; code review practices, tech leadership, time management,
         and how to have outsized impact at any stage.
@@ -61,5 +76,7 @@ import { Testimonials } from '../components/Testimonials';
     </div>
   </div>
 
-  <Testimonials client:load />
+  <div data-reveal style="--reveal-delay: 300ms">
+    <Testimonials client:load />
+  </div>
 </Base>

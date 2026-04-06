@@ -34,19 +34,64 @@
   }
 }
 
-/* Subtle fade-in on page load */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-main {
-  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+[data-reveal] {
+  animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Per-letter spring animation */
+@keyframes letterSpringIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.letter-spring {
+  display: inline-block;
+  opacity: 0;
+  animation: letterSpringIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.letter-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+/* Animated underline links */
+a.link-bleed {
+  color: var(--color-accent);
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  padding: 0;
+  margin: 0;
+  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.link-bleed:hover {
+  background-size: 100% 1.5px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  main {
+  [data-reveal] {
     animation: none;
+  }
+
+  .letter-spring {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  a.link-bleed {
+    transition: none;
   }
 
   .swiper-button-next,
@@ -68,7 +113,7 @@ main {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--color-ink) !important;
+  color: var(--color-accent) !important;
 }
 
 .swiper-pagination-bullet {
@@ -77,6 +122,6 @@ main {
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--color-ink) !important;
+  background: var(--color-accent) !important;
   opacity: 1 !important;
 }
