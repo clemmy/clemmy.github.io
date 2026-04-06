@@ -1,34 +1,82 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --sky-400: #38bdf8;
+@theme {
+  --color-bg: #FAFAF9;
+  --color-surface: #F3F2F0;
+  --color-ink: #1A1A1A;
+  --color-muted: #706F6C;
+  --color-accent: #be185d;
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
 }
 
-@font-face {
-  font-family: "Quicksand";
-  src: url("../fonts/quicksand.ttf");
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Keyboard focus - visible only for keyboard nav */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
-html {
-  height: 100%;
+/* Subtle fade-in on page load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-body {
-  min-height: 100%;
+main {
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-#___gatsby,
-#gatsby-focus-wrapper {
-  min-height: 100%;
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    transition: none !important;
+  }
 }
 
-/*
- * Need this to prevent weird issues with StaticImage
- * https://stackoverflow.com/questions/66835241/gatsby-image-plugin-not-displaying-properly-on-ios-devices
- */
-.gatsby-image-wrapper {
-  position: relative;
-  z-index: 0; 
+/* Swiper customization */
+.swiper {
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-sides-offset: 2px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-muted) !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--color-ink) !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-muted) !important;
+  opacity: 0.4 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-ink) !important;
+  opacity: 1 !important;
 }

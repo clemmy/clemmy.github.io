@@ -1,0 +1,39 @@
+---
+import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource/cormorant-garamond/400.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Clement Hoang',
+  description = 'Software engineer and builder based in San Francisco. Building agentic AI products at Airtable. React core contributor.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/icon.png" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPFEHEQFNK" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-NPFEHEQFNK');
+    </script>
+  </head>
+  <body class="bg-bg text-ink antialiased">
+    <main class="max-w-xl mx-auto px-6 py-20 min-h-screen">
+      <slot />
+    </main>
+  </body>
+</html>
