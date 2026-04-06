@@ -51,14 +51,14 @@ export function Testimonials() {
         centeredSlides={true}
         loop={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
+        pagination={{ clickable: true, el: '#testimonials-pagination' }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full pb-14"
+        className="w-full"
       >
         {testimonials.map((t, i) => (
           <SwiperSlide key={i}>
-            <div className="text-center px-6">
+            <div className="text-center px-6 pb-2">
               <p className="text-base leading-relaxed text-ink mb-4 max-w-md mx-auto">
                 &ldquo;{t.message}&rdquo;
               </p>
@@ -67,6 +67,7 @@ export function Testimonials() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div id="testimonials-pagination" className="flex justify-center mt-5" />
     </div>
   );
 }
