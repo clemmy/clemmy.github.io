@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAFAF9"/>
+
+  <!-- Subtle top border accent -->
+  <rect x="0" y="0" width="1200" height="5" fill="#be185d"/>
+
+  <!-- Rose vertical accent bar -->
+  <rect x="80" y="180" width="4" height="110" fill="#be185d"/>
+
+  <!-- Name -->
+  <text
+    x="104"
+    y="262"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="88"
+    font-weight="400"
+    fill="#1A1A1A"
+    letter-spacing="-1"
+  >Clement Hoang</text>
+
+  <!-- Subtitle -->
+  <text
+    x="106"
+    y="312"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="26"
+    font-weight="400"
+    fill="#706F6C"
+    letter-spacing="2"
+  >SOFTWARE ENGINEER · BUILDER · COACH</text>
+
+  <!-- Domain -->
+  <text
+    x="106"
+    y="530"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="22"
+    font-weight="400"
+    fill="#be185d"
+    letter-spacing="3"
+  >CLEMMY.NINJA</text>
+</svg>

@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.clemmy.ninja',
   output: 'static',
   publicDir: 'static',
-  integrations: [react()],
+  integrations: [react(), sitemap()],
   server: {
     host: '0.0.0.0',
     port: 8080,
