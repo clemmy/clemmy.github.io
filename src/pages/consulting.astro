@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import { Testimonials } from '../components/Testimonials';
+---
+
+<Base title="Consulting & Mentorship — Clement Hoang">
+  <a
+    href="/"
+    class="text-sm text-muted hover:text-ink transition-colors duration-150 inline-block mb-12"
+  >
+    &larr; Home
+  </a>
+
+  <h1 class="text-xl font-semibold tracking-tight text-ink mb-8">Consulting &amp; Mentorship</h1>
+
+  <div class="space-y-4 text-base leading-relaxed text-ink mb-10">
+    <p>
+      I've worked across the full arc of a software career &mdash; early-stage startups, hypergrowth
+      companies, and large-scale engineering organizations. My strength is dealing with ambiguity:
+      breaking down complex problems into focused, high-impact work.
+    </p>
+    <p class="text-muted italic">
+      &ldquo;A smart man learns from his mistakes. A wise man learns from the mistakes of others.&rdquo;
+    </p>
+    <p>
+      I've learned enormously from others throughout my career and would love to give back.
+      Happy to chat about any of the topics below &mdash; reach me at
+      <a href="mailto:me@clemmy.ninja" class="text-accent underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">me@clemmy.ninja</a>.
+    </p>
+  </div>
+
+  <div class="space-y-8 mb-14">
+    <div>
+      <h2 class="text-sm font-semibold text-ink mb-1.5">Breaking into tech</h2>
+      <p class="text-sm text-muted leading-relaxed">
+        Having worked at over 8 companies and applied to hundreds more, I can help with resume improvement,
+        cracking the coding interview, and salary negotiation.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-sm font-semibold text-ink mb-1.5">Project consultation</h2>
+      <p class="text-sm text-muted leading-relaxed">
+        From requirements to architecture, scoping, and execution &mdash; I can help you maximize business
+        impact and avoid common pitfalls.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-sm font-semibold text-ink mb-1.5">Web development</h2>
+      <p class="text-sm text-muted leading-relaxed">
+        Deep experience in React (including core contributions), performance optimization, server-side rendering,
+        and building complex interactive applications. I also ran engineering bootcamps and mentored engineers
+        across organizations.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-sm font-semibold text-ink mb-1.5">Career growth</h2>
+      <p class="text-sm text-muted leading-relaxed">
+        Leveling up in your engineering journey &mdash; code review practices, tech leadership, time management,
+        and how to have outsized impact at any stage.
+      </p>
+    </div>
+  </div>
+
+  <Testimonials client:load />
+</Base>

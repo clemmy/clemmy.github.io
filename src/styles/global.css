@@ -2,33 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --sky-400: #38bdf8;
+@layer base {
+  html {
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Keyboard focus - visible only for keyboard nav */
+  :focus-visible {
+    outline: 2px solid #1D4ED8;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
-@font-face {
-  font-family: "Quicksand";
-  src: url("../fonts/quicksand.ttf");
+/* Subtle fade-in on page load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-html {
-  height: 100%;
+main {
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-body {
-  min-height: 100%;
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    transition: none !important;
+  }
 }
 
-#___gatsby,
-#gatsby-focus-wrapper {
-  min-height: 100%;
+/* Swiper customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6B7280 !important;
+  transform: scale(0.6);
 }
 
-/*
- * Need this to prevent weird issues with StaticImage
- * https://stackoverflow.com/questions/66835241/gatsby-image-plugin-not-displaying-properly-on-ios-devices
- */
-.gatsby-image-wrapper {
-  position: relative;
-  z-index: 0; 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #1A1A1A !important;
+}
+
+.swiper-pagination-bullet {
+  background: #6B7280 !important;
+  opacity: 0.4 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1A1A1A !important;
+  opacity: 1 !important;
 }
