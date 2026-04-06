@@ -7,6 +7,7 @@
   --color-muted: #706F6C;
   --color-accent: #1D4ED8;
   --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
 }
 
 @layer base {
