@@ -5,15 +5,26 @@ import { Testimonials } from '../components/Testimonials';
 
 <Base title="Coaching — Clement Hoang">
   <a
+    data-reveal
     href="/"
     class="text-sm text-muted hover:text-accent transition-colors duration-150 inline-block mb-12"
   >
     Home
   </a>
 
-  <h1 class="text-3xl font-normal tracking-tight text-ink mb-8 font-display">Coaching</h1>
+  <h1
+    data-reveal
+    class="font-display font-normal text-ink mb-8"
+    style="--reveal-delay: 60ms; font-size: clamp(2.5rem, 10vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;"
+  >
+    Coaching
+  </h1>
 
-  <div class="space-y-4 text-base leading-relaxed text-ink mb-10">
+  <div
+    data-reveal
+    class="space-y-4 text-lg leading-relaxed text-ink mb-10"
+    style="--reveal-delay: 140ms"
+  >
     <p>
       I've worked across the full arc of a software career &mdash; early-stage startups, hypergrowth
       companies, and large-scale engineering organizations. My strength is dealing with ambiguity:
@@ -29,7 +40,11 @@ import { Testimonials } from '../components/Testimonials';
     </p>
   </div>
 
-  <div class="space-y-8 mb-14">
+  <div
+    data-reveal
+    class="space-y-8 mb-14"
+    style="--reveal-delay: 220ms"
+  >
     <div>
       <h2 class="text-sm font-semibold text-ink mb-1.5">Breaking into tech</h2>
       <p class="text-sm text-muted leading-relaxed">
@@ -61,5 +76,7 @@ import { Testimonials } from '../components/Testimonials';
     </div>
   </div>
 
-  <Testimonials client:load />
+  <div data-reveal style="--reveal-delay: 300ms">
+    <Testimonials client:load />
+  </div>
 </Base>

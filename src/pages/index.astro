@@ -3,9 +3,27 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Clement Hoang">
-  <h1 class="text-4xl font-normal tracking-tight text-ink mb-12 font-display">Clement Hoang</h1>
+  <h1
+    data-reveal
+    class="font-display font-normal text-ink mb-3"
+    style="font-size: clamp(3rem, 12vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em;"
+  >
+    Clement Hoang
+  </h1>
 
-  <div class="space-y-6 text-base leading-relaxed text-ink mb-16">
+  <p
+    data-reveal
+    class="text-sm text-muted mb-14"
+    style="--reveal-delay: 80ms"
+  >
+    Building agentic AI at Airtable &middot; React core contributor &middot; Meta &middot; Credit Karma
+  </p>
+
+  <div
+    data-reveal
+    class="space-y-6 text-lg leading-relaxed text-ink mb-16"
+    style="--reveal-delay: 160ms"
+  >
     <p>
       I'm a software engineer and builder, based in San Francisco. I currently work at
       <a href="https://airtable.com" class="text-accent underline underline-offset-2 decoration-1 hover:decoration-2 transition-all duration-150" rel="noopener noreferrer">Airtable</a>,
@@ -35,7 +53,12 @@ import Base from '../layouts/Base.astro';
     </p>
   </div>
 
-  <nav aria-label="Social links" class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted border-t border-surface pt-8">
+  <nav
+    data-reveal
+    aria-label="Social links"
+    class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted border-t border-surface pt-8"
+    style="--reveal-delay: 240ms"
+  >
     <a href="https://github.com/clemmy" class="hover:text-accent transition-colors duration-150" rel="noopener noreferrer">GitHub</a>
     <span aria-hidden="true">&middot;</span>
     <a href="https://ca.linkedin.com/in/clementhoang" class="hover:text-accent transition-colors duration-150" rel="noopener noreferrer">LinkedIn</a>
