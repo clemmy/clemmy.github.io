@@ -59,7 +59,7 @@ export function Testimonials() {
         {testimonials.map((t, i) => (
           <SwiperSlide key={i}>
             <div className="text-center px-8">
-              <p className="text-[0.9375rem] leading-relaxed text-ink mb-4 max-w-md mx-auto">
+              <p className="text-base leading-relaxed text-ink mb-4 max-w-md mx-auto">
                 &ldquo;{t.message}&rdquo;
               </p>
               <p className="text-sm text-muted">&mdash; {t.author}</p>

@@ -23,7 +23,7 @@
 
   /* Keyboard focus - visible only for keyboard nav */
   :focus-visible {
-    outline: 2px solid #1D4ED8;
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
     border-radius: 2px;
   }
@@ -57,21 +57,21 @@ main {
 /* Swiper customization */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #6B7280 !important;
+  color: var(--color-muted) !important;
   transform: scale(0.6);
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #1A1A1A !important;
+  color: var(--color-ink) !important;
 }
 
 .swiper-pagination-bullet {
-  background: #6B7280 !important;
+  background: var(--color-muted) !important;
   opacity: 0.4 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #1A1A1A !important;
+  background: var(--color-ink) !important;
   opacity: 1 !important;
 }
