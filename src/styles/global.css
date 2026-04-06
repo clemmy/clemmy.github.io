@@ -113,7 +113,7 @@ a.link-bleed:hover {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--color-ink) !important;
+  color: var(--color-accent) !important;
 }
 
 .swiper-pagination-bullet {
@@ -122,6 +122,6 @@ a.link-bleed:hover {
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--color-ink) !important;
+  background: var(--color-accent) !important;
   opacity: 1 !important;
 }
