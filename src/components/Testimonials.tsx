@@ -54,11 +54,11 @@ export function Testimonials() {
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full pb-10"
+        className="w-full pb-14"
       >
         {testimonials.map((t, i) => (
           <SwiperSlide key={i}>
-            <div className="text-center px-8">
+            <div className="text-center px-6">
               <p className="text-base leading-relaxed text-ink mb-4 max-w-md mx-auto">
                 &ldquo;{t.message}&rdquo;
               </p>

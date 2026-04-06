@@ -56,10 +56,14 @@ main {
 }
 
 /* Swiper customization */
+.swiper {
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-sides-offset: 2px;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-muted) !important;
-  transform: scale(0.6);
 }
 
 .swiper-button-next:hover,
